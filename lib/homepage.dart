@@ -41,8 +41,20 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: DrawerHeader(
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(15),
-                    child: Image.asset(
-                      'images/logo.jfif',
+                    child: Tooltip(
+                      message: "About me",
+                      waitDuration: Duration(seconds: 1),
+                      child: MaterialButton(
+                        padding: EdgeInsets.all(0),
+                        onPressed: () {
+                          Navigator.of(context)
+                              .pushReplacement(MyHomePage1.route());
+                        },
+                        child: Image.asset(
+                          'images/dp.jpg',
+                          width: 3000,
+                        ),
+                      ),
                     ),
                   ),
                   decoration: BoxDecoration(

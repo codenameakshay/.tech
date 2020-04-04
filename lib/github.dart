@@ -41,8 +41,20 @@ class _MyHomePage2State extends State<MyHomePage2> {
                 child: DrawerHeader(
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(15),
-                    child: Image.asset(
-                      'images/logo.jfif',
+                    child: Tooltip(
+                      message: "About me",
+                      waitDuration: Duration(seconds: 1),
+                      child: MaterialButton(
+                        padding: EdgeInsets.all(0),
+                        onPressed: () {
+                          Navigator.of(context)
+                              .pushReplacement(MyHomePage1.route());
+                        },
+                        child: Image.asset(
+                          'images/dp.jpg',
+                          width: 3000,
+                        ),
+                      ),
                     ),
                   ),
                   decoration: BoxDecoration(
@@ -68,10 +80,6 @@ class _MyHomePage2State extends State<MyHomePage2> {
                   ),
                   ListTile(
                     leading: Icon(FontAwesomeIcons.home),
-                    //  SizedBox(
-                    //     height: 20,
-                    //     width: 20,
-                    //     child: Image.asset('icon/home--v2.png')),
                     title: Text(
                       'Home',
                       style: TextStyle(
@@ -79,7 +87,7 @@ class _MyHomePage2State extends State<MyHomePage2> {
                       ),
                     ),
                     onTap: () {
-                      // Navigator.pop(context);
+                      Navigator.pop(context);
                     },
                   ),
                   Divider(
@@ -87,8 +95,6 @@ class _MyHomePage2State extends State<MyHomePage2> {
                   ),
                   ListTile(
                     leading: Icon(FontAwesomeIcons.github),
-                    // SizedBox(
-                    //     height: 20, width: 20, child: Image.asset('icon/github.png')),
                     title: Text(
                       'GitHub Projects',
                       style: TextStyle(
@@ -98,7 +104,6 @@ class _MyHomePage2State extends State<MyHomePage2> {
                     onTap: () {
                       Navigator.of(context)
                           .pushReplacement(MyHomePage2.route());
-                      // Navigator.pop(context);
                     },
                   ),
                   Divider(
@@ -106,10 +111,6 @@ class _MyHomePage2State extends State<MyHomePage2> {
                   ),
                   ListTile(
                     leading: Icon(FontAwesomeIcons.bolt),
-                    //  SizedBox(
-                    //     height: 20,
-                    //     width: 20,
-                    //     child: Image.asset('icon/electronics.png')),
                     title: Text(
                       'Electronics Projects',
                       style: TextStyle(
@@ -117,7 +118,8 @@ class _MyHomePage2State extends State<MyHomePage2> {
                       ),
                     ),
                     onTap: () {
-                      // Navigator.pop(context);
+                      Navigator.of(context)
+                          .pushReplacement(MyHomePage3.route());
                     },
                   ),
                   Divider(
@@ -134,10 +136,6 @@ class _MyHomePage2State extends State<MyHomePage2> {
                     children: <Widget>[
                       ListTile(
                         leading: Icon(FontAwesomeIcons.book),
-                        // SizedBox(
-                        //     height: 20,
-                        //     width: 20,
-                        //     child: Image.asset('icon/linkedin.png')),
                         title: Text(
                           'Resume',
                           style: TextStyle(
@@ -145,7 +143,7 @@ class _MyHomePage2State extends State<MyHomePage2> {
                           ),
                         ),
                         onTap: () {
-                          // Navigator.pop(context);
+                          launch('http://codenameakshay.tech/resume.pdf');
                         },
                       ),
                       Divider(
@@ -153,10 +151,6 @@ class _MyHomePage2State extends State<MyHomePage2> {
                       ),
                       ListTile(
                         leading: Icon(FontAwesomeIcons.linkedin),
-                        // SizedBox(
-                        //     height: 20,
-                        //     width: 20,
-                        //     child: Image.asset('icon/linkedin.png')),
                         title: Text(
                           'LinkedIn',
                           style: TextStyle(
@@ -164,7 +158,8 @@ class _MyHomePage2State extends State<MyHomePage2> {
                           ),
                         ),
                         onTap: () {
-                          // Navigator.pop(context);
+                          launch(
+                              'https://www.linkedin.com/in/akshay-maurya-b56664170/');
                         },
                       ),
                       Divider(
@@ -172,10 +167,6 @@ class _MyHomePage2State extends State<MyHomePage2> {
                       ),
                       ListTile(
                         leading: Icon(FontAwesomeIcons.facebook),
-                        // SizedBox(
-                        //     height: 20,
-                        //     width: 20,
-                        //     child: Image.asset('icon/linkedin.png')),
                         title: Text(
                           'Facebook',
                           style: TextStyle(
@@ -183,7 +174,7 @@ class _MyHomePage2State extends State<MyHomePage2> {
                           ),
                         ),
                         onTap: () {
-                          // Navigator.pop(context);
+                          launch('https://www.facebook.com/akshay.maurya.180');
                         },
                       ),
                       Divider(
@@ -191,10 +182,6 @@ class _MyHomePage2State extends State<MyHomePage2> {
                       ),
                       ListTile(
                         leading: Icon(FontAwesomeIcons.instagram),
-                        // SizedBox(
-                        //     height: 20,
-                        //     width: 20,
-                        //     child: Image.asset('icon/linkedin.png')),
                         title: Text(
                           'Instagram',
                           style: TextStyle(
@@ -202,7 +189,8 @@ class _MyHomePage2State extends State<MyHomePage2> {
                           ),
                         ),
                         onTap: () {
-                          // Navigator.pop(context);
+                          launch(
+                              'https://www.instagram.com/codename_photographer/');
                         },
                       ),
                       Divider(
@@ -210,10 +198,6 @@ class _MyHomePage2State extends State<MyHomePage2> {
                       ),
                       ListTile(
                         leading: Icon(FontAwesomeIcons.githubAlt),
-                        // SizedBox(
-                        //     height: 20,
-                        //     width: 20,
-                        //     child: Image.asset('icon/linkedin.png')),
                         title: Text(
                           'GitHub',
                           style: TextStyle(
@@ -221,7 +205,7 @@ class _MyHomePage2State extends State<MyHomePage2> {
                           ),
                         ),
                         onTap: () {
-                          // Navigator.pop(context);
+                          launch('https://github.com/codenameakshay/');
                         },
                       ),
                       Divider(
@@ -229,7 +213,6 @@ class _MyHomePage2State extends State<MyHomePage2> {
                       ),
                     ],
                   ),
-
                   Builder(
                     builder: (context) => ListTile(
                       title: Text(
@@ -260,23 +243,6 @@ class _MyHomePage2State extends State<MyHomePage2> {
                   Divider(
                     height: 2.0,
                   ),
-                  // Builder(
-                  //   builder: (context) => ListTile(
-                  //     leading: Icon(Icons.open_in_browser),
-                  //     title: new InkWell(
-                  //         child: Text('Visit my website!'),
-                  //         onTap: () {
-                  //           launch('http://codenameakshay.tech');
-                  //           Navigator.pop(context);
-                  //         }),
-                  //     onTap: () {
-                  //       Navigator.pop(context);
-                  //     },
-                  //   ),
-                  // ),
-                  // Divider(
-                  //   height: 2.0,
-                  // ),
                 ],
               ),
             )
@@ -325,7 +291,7 @@ class NavBar extends StatelessWidget {
           height: constraints.maxHeight,
           openDrawer: openDrawer,
         );
-      } else if (constraints.maxWidth > 800 && constraints.maxWidth < 1200) {
+      } else if (constraints.maxWidth > 910 && constraints.maxWidth < 1200) {
         return DesktopNavBar(
           width: constraints.maxWidth,
           height: constraints.maxHeight,
@@ -373,40 +339,83 @@ class DesktopNavBar extends StatelessWidget {
             ),
             Row(
               children: <Widget>[
-                Text(
-                  'Home',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontFamily: 'Montserrat',
-                  ),
-                ),
-                SizedBox(width: 30),
-                Text(
-                  'GitHub',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontFamily: 'Montserrat',
-                  ),
-                ),
-                SizedBox(width: 30),
-                Text(
-                  'Electronics',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontFamily: 'Montserrat',
-                  ),
-                ),
-                SizedBox(width: 30),
-                Text(
-                  'About',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontFamily: 'Montserrat',
-                  ),
-                ),
-                SizedBox(width: 30),
                 MaterialButton(
-                  onPressed: () {},
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(20),
+                    ),
+                  ),
+                  child: Text(
+                    'Home',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontFamily: 'Montserrat',
+                    ),
+                  ),
+                  onPressed: () {
+                    Navigator.of(context).pushReplacement(MyHomePage.route());
+                  },
+                ),
+                SizedBox(width: 10),
+                MaterialButton(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(20),
+                    ),
+                  ),
+                  child: Text(
+                    'GitHub',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontFamily: 'Montserrat',
+                    ),
+                  ),
+                  onPressed: () {
+                    Navigator.of(context).pushReplacement(MyHomePage2.route());
+                  },
+                ),
+                SizedBox(width: 10),
+                MaterialButton(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(20),
+                    ),
+                  ),
+                  child: Text(
+                    'Electronics',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontFamily: 'Montserrat',
+                    ),
+                  ),
+                  onPressed: () {
+                    Navigator.of(context).pushReplacement(MyHomePage3.route());
+                  },
+                ),
+                SizedBox(width: 10),
+                MaterialButton(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(20),
+                    ),
+                  ),
+                  child: Text(
+                    'About Me',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontFamily: 'Montserrat',
+                    ),
+                  ),
+                  onPressed: () {
+                    Navigator.of(context).pushReplacement(MyHomePage1.route());
+                  },
+                ),
+                SizedBox(width: 20),
+                MaterialButton(
+                  onPressed: () {
+                    launch(
+                        'https://www.linkedin.com/in/akshay-maurya-b56664170/');
+                  },
                   color: themeProvider.getDarkMode()
                       ? Color.fromARGB(255, 115, 3, 192)
                       : Colors.cyanAccent[400],
@@ -500,7 +509,9 @@ class LandingPage extends StatelessWidget {
                 ),
               ),
               MaterialButton(
-                onPressed: () {},
+                onPressed: () {
+                  launch('https://github.com/codenameakshay/');
+                },
                 color: Colors.white,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.all(
@@ -575,7 +586,9 @@ class LandingPage extends StatelessWidget {
                 ),
               ),
               MaterialButton(
-                onPressed: () {},
+                onPressed: () {
+                  launch('https://github.com/codenameakshay/');
+                },
                 color: Colors.white,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.all(
