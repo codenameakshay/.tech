@@ -488,25 +488,100 @@ class LandingPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               Text(
-                'App\nDeveloper',
+                'GitHub Projects',
                 style: TextStyle(
                   color: Colors.white,
                   fontFamily: 'Montserrat',
                   fontSize: 40,
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(
-                  vertical: 20,
-                ),
-                child: Text(
-                  "I am experienced Electronic Engineer with a demonstrated history of working in the electrical \nand electronic manufacturing industry. Skilled in Python (Programming Language), DART, \nFlutter, Android App Development, Web Development, Lightroom, Video Editing, Digital \nManipulation, and Adobe Photoshop. I also have strong engineering professional with a BTech - \nBachelor of Technology focused in Electrical, Electronics and Communications Engineering \nfrom Netaji Subhas Institute of Technology.",
-                  style: TextStyle(
+              Row(
+                children: <Widget>[
+                  Card(
                     color: Colors.white,
-                    fontFamily: 'Montserrat',
-                    fontSize: 16,
+                    margin: EdgeInsets.only(top: 15, right: 15, bottom: 15),
+                    child: Stack(
+                      children: <Widget>[
+                        Image.asset(
+                          'images/git1.png',
+                          width: 500,
+                        ),
+                        MaterialButton(
+                            onPressed: () {
+                              launch(
+                                  'https://github.com/codenameakshay/tictactoe-flutter');
+                            },
+                            height: 136,
+                            child: Text(
+                                "                                                                                                                         "))
+                      ],
+                    ),
                   ),
-                ),
+                  Card(
+                    color: Colors.white,
+                    margin: EdgeInsets.all(15),
+                    child: Stack(
+                      children: <Widget>[
+                        Image.asset(
+                          'images/git2.png',
+                          width: 500,
+                        ),
+                        MaterialButton(
+                            onPressed: () {
+                              launch(
+                                  'https://github.com/codenameakshay/BMI-flutter');
+                            },
+                            height: 136,
+                            child: Text(
+                                "                                                                                                                         "))
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+              Row(
+                children: <Widget>[
+                  Card(
+                    color: Colors.white,
+                    margin: EdgeInsets.only(top: 15, right: 15, bottom: 15),
+                    child: Stack(
+                      children: <Widget>[
+                        Image.asset(
+                          'images/git3.png',
+                          width: 500,
+                        ),
+                        MaterialButton(
+                            onPressed: () {
+                              launch(
+                                  'https://github.com/codenameakshay/qr-scanner-flutter');
+                            },
+                            height: 136,
+                            child: Text(
+                                "                                                                                                                         "))
+                      ],
+                    ),
+                  ),
+                  Card(
+                    color: Colors.white,
+                    margin: EdgeInsets.all(15),
+                    child: Stack(
+                      children: <Widget>[
+                        Image.asset(
+                          'images/git4.png',
+                          width: 500,
+                        ),
+                        MaterialButton(
+                            onPressed: () {
+                              launch(
+                                  'https://github.com/codenameakshay/scientific-expression-calculator');
+                            },
+                            height: 136,
+                            child: Text(
+                                "                                                                                                                         "))
+                      ],
+                    ),
+                  ),
+                ],
               ),
               MaterialButton(
                 onPressed: () {
@@ -522,7 +597,7 @@ class LandingPage extends StatelessWidget {
                   padding:
                       const EdgeInsets.symmetric(vertical: 20, horizontal: 40),
                   child: Text(
-                    'Check projects',
+                    'Check all projects',
                     style: TextStyle(
                       color: themeProvider.getDarkMode()
                           ? Color.fromARGB(255, 115, 3, 192)
@@ -536,13 +611,13 @@ class LandingPage extends StatelessWidget {
           ),
         ),
       ),
-      Padding(
-        padding: const EdgeInsets.symmetric(vertical: 20),
-        child: Image.asset(
-          'images/hugo-productive-work.png',
-          width: width * width / 5000,
-        ),
-      )
+      // Padding(
+      //   padding: const EdgeInsets.symmetric(vertical: 20),
+      //   child: Image.asset(
+      //     'images/hugo-productive-work.png',
+      //     width: width * width / 5000,
+      //   ),
+      // )
     ];
   }
 
@@ -565,25 +640,112 @@ class LandingPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               Text(
-                'App\nDeveloper',
+                'GitHub Projects',
                 style: TextStyle(
                   color: Colors.white,
                   fontFamily: 'Montserrat',
                   fontSize: 40,
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(
-                  vertical: 20,
-                ),
-                child: Text(
-                  "I am experienced Electronic Engineer with a demonstrated history of working in the electrical \nand electronic manufacturing industry. Skilled in Python (Programming Language), DART, \nFlutter, Android App Development, Web Development, Lightroom, Video Editing, Digital \nManipulation, and Adobe Photoshop. I also have strong engineering professional with a BTech - \nBachelor of Technology focused in Electrical, Electronics and Communications Engineering \nfrom Netaji Subhas Institute of Technology.",
-                  style: TextStyle(
+              Column(
+                children: <Widget>[
+                  Card(
                     color: Colors.white,
-                    fontFamily: 'Montserrat',
-                    fontSize: 16,
+                    margin: EdgeInsets.only(top: 15),
+                    child: Stack(
+                      children: <Widget>[
+                        Center(
+                          child: Image.asset(
+                            'images/git1.png',
+                            width: 365,
+                          ),
+                        ),
+                        Center(
+                          child: MaterialButton(
+                              onPressed: () {
+                                launch(
+                                    'https://github.com/codenameakshay/tictactoe-flutter');
+                              },
+                              height: 100,
+                              child: Text(
+                                  "                                                                                                                         ")),
+                        )
+                      ],
+                    ),
                   ),
-                ),
+                  Card(
+                    color: Colors.white,
+                    margin: EdgeInsets.only(top: 15),
+                    child: Stack(
+                      children: <Widget>[
+                        Center(
+                          child: Image.asset(
+                            'images/git2.png',
+                            width: 365,
+                          ),
+                        ),
+                        Center(
+                          child: MaterialButton(
+                              onPressed: () {
+                                launch(
+                                    'https://github.com/codenameakshay/BMI-flutter');
+                              },
+                              height: 100,
+                              child: Text(
+                                  "                                                                                                                         ")),
+                        )
+                      ],
+                    ),
+                  ),
+                  Card(
+                    color: Colors.white,
+                    margin: EdgeInsets.only(top: 15),
+                    child: Stack(
+                      children: <Widget>[
+                        Center(
+                          child: Image.asset(
+                            'images/git3.png',
+                            width: 365,
+                          ),
+                        ),
+                        Center(
+                          child: MaterialButton(
+                              onPressed: () {
+                                launch(
+                                    'https://github.com/codenameakshay/qr-scanner-flutter');
+                              },
+                              height: 100,
+                              child: Text(
+                                  "                                                                                                                         ")),
+                        )
+                      ],
+                    ),
+                  ),
+                  Card(
+                    color: Colors.white,
+                    margin: EdgeInsets.only(top: 15,bottom:15),
+                    child: Stack(
+                      children: <Widget>[
+                        Center(
+                          child: Image.asset(
+                            'images/git4.png',
+                            width: 365,
+                          ),
+                        ),
+                        Center(
+                          child: MaterialButton(
+                              onPressed: () {
+                                launch(
+                                    'https://github.com/codenameakshay/scientific-expression-calculator');
+                              },
+                              height: 100,
+                              child: Text(
+                                  "                                                                                                                         ")),
+                        )
+                      ],
+                    ),
+                  ),
+                ],
               ),
               MaterialButton(
                 onPressed: () {
@@ -599,7 +761,7 @@ class LandingPage extends StatelessWidget {
                   padding:
                       const EdgeInsets.symmetric(vertical: 20, horizontal: 40),
                   child: Text(
-                    'Check projects',
+                    'Check all projects',
                     style: TextStyle(
                       color: themeProvider.getDarkMode()
                           ? Color.fromARGB(255, 115, 3, 192)
