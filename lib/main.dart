@@ -25,26 +25,23 @@ class MyApp extends StatelessWidget {
     final themeProvider = Provider.of<DynamicTheme>(context);
     return MaterialApp(
       onGenerateRoute: (settings) {
-        switch(settings.name) {
-          case "/": return MyHomePage.route();
-          case "/about": return MyHomePage1.route();
-          case "/github": return MyHomePage2.route();
-          case "/electronics": return MyHomePage3.route();
+        switch (settings.name) {
+          case "/":
+            return MyHomePage.route();
+          case "/about":
+            return MyHomePage1.route();
+          case "/github":
+            return MyHomePage2.route();
+          case "/electronics":
+            return MyHomePage3.route();
           // case "/download": return Download.route();
-          default: return MyHomePage.route();
+          default:
+            return MyHomePage.route();
         }
       },
       initialRoute: "/",
       debugShowCheckedModeBanner: false,
-      theme: themeProvider.getDarkMode()
-          ? ThemeData(
-              primarySwatch: Colors.lightBlue,
-              textTheme: TextTheme(
-                headline6:
-                    TextStyle(color: Colors.white, fontFamily: 'Montserrat'),
-              ),
-            )
-          : ThemeData.dark(),
+      theme: themeProvider.getDarkMode() ? ThemeData.dark() : ThemeData.light(),
       // home: MyHomePage(),
     );
   }

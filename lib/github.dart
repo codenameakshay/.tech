@@ -6,15 +6,19 @@ import 'package:flutter/cupertino.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'dart:math';
 import './routes.dart';
+import './homepage.dart';
+import './about.dart';
+import './electronics.dart';
 
 class MyHomePage2 extends StatefulWidget {
   static Route<dynamic> route() {
-  return SimpleRoute(
-    name: '/github',
-    title: 'GitHub Projects',
-    builder: (_) => MyHomePage2(),
-  );
-}
+    return SimpleRoute(
+      name: '/github',
+      title: 'GitHub Projects',
+      builder: (_) => MyHomePage2(),
+    );
+  }
+
   @override
   _MyHomePage2State createState() => _MyHomePage2State();
 }
@@ -92,6 +96,8 @@ class _MyHomePage2State extends State<MyHomePage2> {
                       ),
                     ),
                     onTap: () {
+                      Navigator.of(context)
+                          .pushReplacement(MyHomePage2.route());
                       // Navigator.pop(context);
                     },
                   ),
@@ -227,7 +233,7 @@ class _MyHomePage2State extends State<MyHomePage2> {
                   Builder(
                     builder: (context) => ListTile(
                       title: Text(
-                        'Toggle Light mode',
+                        'Toggle Dark mode',
                         style: TextStyle(
                           fontFamily: 'Montserrat',
                         ),
@@ -279,10 +285,20 @@ class _MyHomePage2State extends State<MyHomePage2> {
       ),
       body: Container(
         decoration: BoxDecoration(
-            gradient: LinearGradient(colors: [
-          Color.fromARGB(255, 60, 140, 231),
-          Color.fromARGB(255, 0, 234, 255),
-        ], begin: Alignment.centerLeft, end: Alignment.centerRight)),
+            gradient: LinearGradient(
+                colors: themeProvider.getDarkMode()
+                    ? [
+                        Color.fromARGB(255, 3, 0, 30),
+                        Color.fromARGB(255, 115, 3, 192),
+                        Color.fromARGB(255, 236, 56, 188),
+                        Color.fromARGB(255, 253, 239, 249),
+                      ]
+                    : [
+                        Color.fromARGB(255, 60, 140, 231),
+                        Color.fromARGB(255, 0, 234, 255),
+                      ],
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight)),
         child: Column(
           children: <Widget>[NavBar(openDrawer), LandingPage()],
         ),
@@ -333,6 +349,7 @@ class DesktopNavBar extends StatelessWidget {
   DesktopNavBar({this.width, this.height, this.openDrawer});
   @override
   Widget build(BuildContext context) {
+    final themeProvider = Provider.of<DynamicTheme>(context);
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 40),
       child: Container(
@@ -343,15 +360,6 @@ class DesktopNavBar extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
-                // IconButton(
-                //     icon: Icon(
-                //       Icons.menu,
-                //       color: Colors.white,
-                //     ),
-                //     onPressed: () {
-                //       openDrawer();
-                //     }),
-                // SizedBox(width: 30),
                 Text(
                   'CodeNameAkshay',
                   style: TextStyle(
@@ -399,7 +407,9 @@ class DesktopNavBar extends StatelessWidget {
                 SizedBox(width: 30),
                 MaterialButton(
                   onPressed: () {},
-                  color: Colors.cyanAccent[400],
+                  color: themeProvider.getDarkMode()
+                      ? Color.fromARGB(255, 115, 3, 192)
+                      : Colors.cyanAccent[400],
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.all(
                       Radius.circular(20),
@@ -460,7 +470,7 @@ class MobileNavBar extends StatelessWidget {
 }
 
 class LandingPage extends StatelessWidget {
-  List<Widget> landingPageChild(var width, var height) {
+  List<Widget> landingPageChild(var width, var height, var themeProvider) {
     return <Widget>[
       Padding(
         padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 30.0),
@@ -469,7 +479,7 @@ class LandingPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               Text(
-                'GitHub\nProjects',
+                'App\nDeveloper',
                 style: TextStyle(
                   color: Colors.white,
                   fontFamily: 'Montserrat',
@@ -503,7 +513,9 @@ class LandingPage extends StatelessWidget {
                   child: Text(
                     'Check projects',
                     style: TextStyle(
-                      color: Colors.cyan,
+                      color: themeProvider.getDarkMode()
+                          ? Color.fromARGB(255, 115, 3, 192)
+                          : Colors.cyan,
                       fontFamily: 'Montserrat',
                     ),
                   ),
@@ -523,7 +535,7 @@ class LandingPage extends StatelessWidget {
     ];
   }
 
-  Widget landingPageVert(var width, var height) {
+  Widget landingPageVert(var width, var height, var themeProvider) {
     return Stack(alignment: Alignment.topCenter, children: <Widget>[
       Opacity(
         opacity: 0.4,
@@ -542,7 +554,7 @@ class LandingPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               Text(
-                'GitHub\nProjects',
+                'App\nDeveloper',
                 style: TextStyle(
                   color: Colors.white,
                   fontFamily: 'Montserrat',
@@ -576,7 +588,9 @@ class LandingPage extends StatelessWidget {
                   child: Text(
                     'Check projects',
                     style: TextStyle(
-                      color: Colors.cyan,
+                      color: themeProvider.getDarkMode()
+                          ? Color.fromARGB(255, 115, 3, 192)
+                          : Colors.cyan,
                       fontFamily: 'Montserrat',
                     ),
                   ),
@@ -593,6 +607,7 @@ class LandingPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context, constraints) {
+        final themeProvider = Provider.of<DynamicTheme>(context);
         if (constraints.maxWidth > 1200) {
           return ListView(
               scrollDirection: Axis.vertical,
@@ -603,6 +618,7 @@ class LandingPage extends StatelessWidget {
                   children: landingPageChild(
                     constraints.maxWidth,
                     constraints.maxHeight,
+                    themeProvider,
                   ),
                 )
               ]);
@@ -613,6 +629,7 @@ class LandingPage extends StatelessWidget {
               landingPageVert(
                 constraints.maxWidth,
                 constraints.maxHeight,
+                themeProvider,
               )
             ],
           );
