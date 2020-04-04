@@ -489,7 +489,7 @@ class LandingPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               Text(
-                'App\nDeveloper',
+                'About Me',
                 style: TextStyle(
                   color: Colors.white,
                   fontFamily: 'Montserrat',
@@ -511,7 +511,7 @@ class LandingPage extends StatelessWidget {
               ),
               MaterialButton(
                 onPressed: () {
-                  launch('https://github.com/codenameakshay/');
+                  launch('mailto:akshaymaurya3006@gmail.com');
                 },
                 color: Colors.white,
                 shape: RoundedRectangleBorder(
@@ -523,7 +523,7 @@ class LandingPage extends StatelessWidget {
                   padding:
                       const EdgeInsets.symmetric(vertical: 20, horizontal: 40),
                   child: Text(
-                    'Check projects',
+                    'Contact Me',
                     style: TextStyle(
                       color: themeProvider.getDarkMode()
                           ? Color.fromARGB(255, 115, 3, 192)
@@ -540,7 +540,7 @@ class LandingPage extends StatelessWidget {
       Padding(
         padding: const EdgeInsets.symmetric(vertical: 20),
         child: Image.asset(
-          'images/hugo-productive-work.png',
+          'images/hugo-easy-money.png',
           width: width * width / 5000,
         ),
       )
@@ -554,7 +554,7 @@ class LandingPage extends StatelessWidget {
         child: Container(
           margin: EdgeInsets.only(top: 100),
           child: Image.asset(
-            'images/hugo-productive-work.png',
+            'images/hugo-easy-money.png',
             width: sqrt(width) * 18,
           ),
         ),
@@ -566,7 +566,7 @@ class LandingPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               Text(
-                'App\nDeveloper',
+                'About Me',
                 style: TextStyle(
                   color: Colors.white,
                   fontFamily: 'Montserrat',
@@ -588,7 +588,7 @@ class LandingPage extends StatelessWidget {
               ),
               MaterialButton(
                 onPressed: () {
-                  launch('https://github.com/codenameakshay/');
+                  launch('mailto:akshaymaurya3006@gmail.com');
                 },
                 color: Colors.white,
                 shape: RoundedRectangleBorder(
@@ -600,7 +600,7 @@ class LandingPage extends StatelessWidget {
                   padding:
                       const EdgeInsets.symmetric(vertical: 20, horizontal: 40),
                   child: Text(
-                    'Check projects',
+                    'Contact Me',
                     style: TextStyle(
                       color: themeProvider.getDarkMode()
                           ? Color.fromARGB(255, 115, 3, 192)
