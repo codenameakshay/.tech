@@ -507,6 +507,7 @@ class LandingPage extends StatelessWidget {
                           width: 500,
                         ),
                         MaterialButton(
+                            hoverColor: Colors.black26,
                             onPressed: () {
                               launch(
                                   'https://github.com/codenameakshay/tictactoe-flutter');
@@ -527,6 +528,7 @@ class LandingPage extends StatelessWidget {
                           width: 500,
                         ),
                         MaterialButton(
+                            hoverColor: Colors.black26,
                             onPressed: () {
                               launch(
                                   'https://github.com/codenameakshay/BMI-flutter');
@@ -551,6 +553,7 @@ class LandingPage extends StatelessWidget {
                           width: 500,
                         ),
                         MaterialButton(
+                            hoverColor: Colors.black26,
                             onPressed: () {
                               launch(
                                   'https://github.com/codenameakshay/qr-scanner-flutter');
@@ -571,6 +574,7 @@ class LandingPage extends StatelessWidget {
                           width: 500,
                         ),
                         MaterialButton(
+                            hoverColor: Colors.black26,
                             onPressed: () {
                               launch(
                                   'https://github.com/codenameakshay/scientific-expression-calculator');
@@ -662,13 +666,14 @@ class LandingPage extends StatelessWidget {
                         ),
                         Center(
                           child: MaterialButton(
+                              hoverColor: Colors.black26,
                               onPressed: () {
                                 launch(
                                     'https://github.com/codenameakshay/tictactoe-flutter');
                               },
                               height: 100,
                               child: Text(
-                                  "                                                                                                                         ")),
+                                  "                                                                                                                                                                                                                                                                                                                     ")),
                         )
                       ],
                     ),
@@ -686,13 +691,14 @@ class LandingPage extends StatelessWidget {
                         ),
                         Center(
                           child: MaterialButton(
+                              hoverColor: Colors.black26,
                               onPressed: () {
                                 launch(
                                     'https://github.com/codenameakshay/BMI-flutter');
                               },
                               height: 100,
                               child: Text(
-                                  "                                                                                                                         ")),
+                                  "                                                                                                                                                                                                                                                                                                                     ")),
                         )
                       ],
                     ),
@@ -710,20 +716,21 @@ class LandingPage extends StatelessWidget {
                         ),
                         Center(
                           child: MaterialButton(
+                              hoverColor: Colors.black26,
                               onPressed: () {
                                 launch(
                                     'https://github.com/codenameakshay/qr-scanner-flutter');
                               },
                               height: 100,
                               child: Text(
-                                  "                                                                                                                         ")),
+                                  "                                                                                                                                                                                                                                                                                                                     ")),
                         )
                       ],
                     ),
                   ),
                   Card(
                     color: Colors.white,
-                    margin: EdgeInsets.only(top: 15,bottom:15),
+                    margin: EdgeInsets.only(top: 15, bottom: 15),
                     child: Stack(
                       children: <Widget>[
                         Center(
@@ -734,13 +741,14 @@ class LandingPage extends StatelessWidget {
                         ),
                         Center(
                           child: MaterialButton(
+                              hoverColor: Colors.black26,
                               onPressed: () {
                                 launch(
                                     'https://github.com/codenameakshay/scientific-expression-calculator');
                               },
                               height: 100,
                               child: Text(
-                                  "                                                                                                                         ")),
+                                  "                                                                                                                                                                                                                                                                                                                     ")),
                         )
                       ],
                     ),

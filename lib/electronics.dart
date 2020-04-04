@@ -8,7 +8,6 @@ import 'dart:math';
 import './routes.dart';
 import './homepage.dart';
 import './about.dart';
-import './electronics.dart';
 import './github.dart';
 
 class MyHomePage3 extends StatefulWidget {
@@ -88,7 +87,8 @@ class _MyHomePage3State extends State<MyHomePage3> {
                       ),
                     ),
                     onTap: () {
-                      Navigator.pop(context);
+                      Navigator.of(context)
+                          .pushReplacement(MyHomePage.route());
                     },
                   ),
                   Divider(
@@ -489,29 +489,151 @@ class LandingPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               Text(
-                'App\nDeveloper',
+                'Electronics Projects',
                 style: TextStyle(
                   color: Colors.white,
                   fontFamily: 'Montserrat',
                   fontSize: 40,
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(
-                  vertical: 20,
-                ),
-                child: Text(
-                  "I am experienced Electronic Engineer with a demonstrated history of working in the electrical \nand electronic manufacturing industry. Skilled in Python (Programming Language), DART, \nFlutter, Android App Development, Web Development, Lightroom, Video Editing, Digital \nManipulation, and Adobe Photoshop. I also have strong engineering professional with a BTech - \nBachelor of Technology focused in Electrical, Electronics and Communications Engineering \nfrom Netaji Subhas Institute of Technology.",
-                  style: TextStyle(
+              Row(
+                children: <Widget>[
+                  Card(
                     color: Colors.white,
-                    fontFamily: 'Montserrat',
-                    fontSize: 16,
+                    margin: EdgeInsets.only(top: 15, right: 15),
+                    child: Stack(
+                      children: <Widget>[
+                        Image.asset(
+                          'images/yt1.png',
+                          width: 300,
+                        ),
+                        MaterialButton(
+                            hoverColor: Colors.black26,
+                            onPressed: () {
+                              launch(
+                                  'https://www.youtube.com/watch?v=A8pD1dj2Qsg');
+                            },
+                            height: 230,
+                            child: Text(
+                                "                                                                     "))
+                      ],
+                    ),
                   ),
-                ),
+                  Card(
+                    color: Colors.white,
+                    margin: EdgeInsets.only(top: 15, right: 15, left: 15),
+                    child: Stack(
+                      children: <Widget>[
+                        Image.asset(
+                          'images/yt2.png',
+                          width: 300,
+                        ),
+                        MaterialButton(
+                            hoverColor: Colors.black26,
+                            onPressed: () {
+                              launch(
+                                  'https://www.youtube.com/watch?v=_Wd3oHnJhHo');
+                            },
+                            height: 230,
+                            child: Text(
+                                "                                                                     "))
+                      ],
+                    ),
+                  ),
+                  Card(
+                    color: Colors.white,
+                    margin: EdgeInsets.only(top: 15, right: 15, left: 15),
+                    child: Stack(
+                      children: <Widget>[
+                        Image.asset(
+                          'images/yt3.png',
+                          width: 300,
+                        ),
+                        MaterialButton(
+                            hoverColor: Colors.black26,
+                            onPressed: () {
+                              launch(
+                                  'https://www.youtube.com/watch?v=35NZ8DxCS-g');
+                            },
+                            height: 230,
+                            child: Text(
+                                "                                                                     "))
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+              Row(
+                children: <Widget>[
+                  Card(
+                    color: Colors.white,
+                    margin: EdgeInsets.only(top: 15, right: 15, bottom: 15),
+                    child: Stack(
+                      children: <Widget>[
+                        Image.asset(
+                          'images/yt4.png',
+                          width: 300,
+                        ),
+                        MaterialButton(
+                            hoverColor: Colors.black26,
+                            onPressed: () {
+                              launch(
+                                  'https://www.youtube.com/watch?v=iENXxbHCuU0');
+                            },
+                            height: 230,
+                            child: Text(
+                                "                                                                     "))
+                      ],
+                    ),
+                  ),
+                  Card(
+                    color: Colors.white,
+                    margin: EdgeInsets.all(15),
+                    child: Stack(
+                      children: <Widget>[
+                        Image.asset(
+                          'images/yt5.png',
+                          width: 300,
+                        ),
+                        MaterialButton(
+                            hoverColor: Colors.black26,
+                            onPressed: () {
+                              launch(
+                                  'https://www.youtube.com/watch?v=w1odfEejg-s');
+                            },
+                            height: 230,
+                            child: Text(
+                                "                                                                     "))
+                      ],
+                    ),
+                  ),
+                  Card(
+                    color: Colors.white,
+                    margin: EdgeInsets.all(15),
+                    child: Stack(
+                      children: <Widget>[
+                        Image.asset(
+                          'images/yt6.png',
+                          width: 300,
+                        ),
+                        MaterialButton(
+                            hoverColor: Colors.black26,
+                            onPressed: () {
+                              launch(
+                                  'https://www.youtube.com/watch?v=Yt7kgCYVjxU');
+                            },
+                            height: 230,
+                            child: Text(
+                                "                                                                     "))
+                      ],
+                    ),
+                  ),
+                ],
               ),
               MaterialButton(
                 onPressed: () {
-                  launch('https://github.com/codenameakshay/');
+                  launch(
+                      'https://www.youtube.com/channel/UCBSEFstqptgtYsLSAdq8tKg/videos');
                 },
                 color: Colors.white,
                 shape: RoundedRectangleBorder(
@@ -523,7 +645,7 @@ class LandingPage extends StatelessWidget {
                   padding:
                       const EdgeInsets.symmetric(vertical: 20, horizontal: 40),
                   child: Text(
-                    'Check projects',
+                    'Check all projects',
                     style: TextStyle(
                       color: themeProvider.getDarkMode()
                           ? Color.fromARGB(255, 115, 3, 192)
@@ -537,13 +659,6 @@ class LandingPage extends StatelessWidget {
           ),
         ),
       ),
-      Padding(
-        padding: const EdgeInsets.symmetric(vertical: 20),
-        child: Image.asset(
-          'images/hugo-productive-work.png',
-          width: width * width / 5000,
-        ),
-      )
     ];
   }
 
@@ -566,25 +681,150 @@ class LandingPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               Text(
-                'App\nDeveloper',
+                'Electronics Projects',
                 style: TextStyle(
                   color: Colors.white,
                   fontFamily: 'Montserrat',
                   fontSize: 40,
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(
-                  vertical: 20,
-                ),
-                child: Text(
-                  "I am experienced Electronic Engineer with a demonstrated history of working in the electrical \nand electronic manufacturing industry. Skilled in Python (Programming Language), DART, \nFlutter, Android App Development, Web Development, Lightroom, Video Editing, Digital \nManipulation, and Adobe Photoshop. I also have strong engineering professional with a BTech - \nBachelor of Technology focused in Electrical, Electronics and Communications Engineering \nfrom Netaji Subhas Institute of Technology.",
-                  style: TextStyle(
+              Row(mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Card(
                     color: Colors.white,
-                    fontFamily: 'Montserrat',
-                    fontSize: 16,
+                    margin: EdgeInsets.only(top: 15, right: 15),
+                    child: Stack(
+                      children: <Widget>[
+                        Image.asset(
+                          'images/yt1.png',
+                          width: 180,
+                        ),
+                        MaterialButton(
+                            hoverColor: Colors.black26,
+                            onPressed: () {
+                              launch(
+                                  'https://www.youtube.com/watch?v=A8pD1dj2Qsg');
+                            },
+                            height: 140,
+                            child: Text(
+                                "                                      "))
+                      ],
+                    ),
                   ),
-                ),
+                  Card(
+                    color: Colors.white,
+                    margin: EdgeInsets.only(top: 15, right: 15),
+                    child: Stack(
+                      children: <Widget>[
+                        Image.asset(
+                          'images/yt2.png',
+                          width: 180,
+                        ),
+                        MaterialButton(
+                            hoverColor: Colors.black26,
+                            onPressed: () {
+                              launch(
+                                  'https://www.youtube.com/watch?v=_Wd3oHnJhHo');
+                            },
+                            height: 140,
+                            child: Text(
+                                "                                      "))
+                       ],
+                    ),
+                  ),
+                ],
+              ),
+              Row(mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Card(
+                    color: Colors.white,
+                    margin: EdgeInsets.only(top: 15, right: 15),
+                    child: Stack(
+                      children: <Widget>[
+                        Image.asset(
+                          'images/yt3.png',
+                          width: 180,
+                        ),
+                        MaterialButton(
+                            hoverColor: Colors.black26,
+                            onPressed: () {
+                              launch(
+                                  'https://www.youtube.com/watch?v=35NZ8DxCS-g');
+                            },
+                            height: 140,
+                            child: Text(
+                                "                                      "))
+                      ],
+                    ),
+                  ),
+                  Card(
+                    color: Colors.white,
+                    margin: EdgeInsets.only(top: 15, right: 15),
+                    child: Stack(
+                      children: <Widget>[
+                        Image.asset(
+                          'images/yt4.png',
+                          width: 180,
+                        ),
+                        MaterialButton(
+                            hoverColor: Colors.black26,
+                            onPressed: () {
+                              launch(
+                                  'https://www.youtube.com/watch?v=iENXxbHCuU0');
+                            },
+                            height: 140,
+                            child: Text(
+                                "                                      "))
+                       ],
+                    ),
+                  ),
+                ],
+              ),
+              Row(mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Card(
+                    color: Colors.white,
+                    margin: EdgeInsets.only(top: 15, right: 15, bottom: 15),
+                    child: Stack(
+                      children: <Widget>[
+                        Image.asset(
+                          'images/yt5.png',
+                          width: 180,
+                        ),
+                        MaterialButton(
+                            hoverColor: Colors.black26,
+                            onPressed: () {
+                              launch(
+                                  'https://www.youtube.com/watch?v=w1odfEejg-s');
+                            },
+                            height: 140,
+                            child: Text(
+                                "                                      "))
+                      ],
+                    ),
+                  ),
+                  Card(
+                    color: Colors.white,
+                    margin: EdgeInsets.only(top: 15, right: 15, bottom: 15),
+                    child: Stack(
+                      children: <Widget>[
+                        Image.asset(
+                          'images/yt6.png',
+                          width: 180,
+                        ),
+                        MaterialButton(
+                            hoverColor: Colors.black26,
+                            onPressed: () {
+                              launch(
+                                  'https://www.youtube.com/watch?v=Yt7kgCYVjxU');
+                            },
+                           height: 140,
+                            child: Text(
+                                "                                      "))
+                       ],
+                    ),
+                  ),
+                ],
               ),
               MaterialButton(
                 onPressed: () {
