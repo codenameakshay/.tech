@@ -580,7 +580,7 @@ class LandingPage extends StatelessWidget {
                   vertical: 20,
                 ),
                 child: Text(
-                  "I am experienced Electronic Engineer with a demonstrated history of working in the electrical \nand electronic manufacturing industry. Skilled in Python (Programming Language), DART, \nFlutter, Android App Development, Web Development, Lightroom, Video Editing, Digital \nManipulation, and Adobe Photoshop. I also have strong engineering professional with a BTech - \nBachelor of Technology focused in Electrical, Electronics and Communications Engineering \nfrom Netaji Subhas Institute of Technology.",
+                  "Hello, if we are meeting for the first time, I am Akshay Maurya, an engineering undergrad from Delhi, India.\nI am pursing engineering from Netaji Subhas University of Technology, Delhi in Electronics and Communications\nbranch. I love to create electronics projects which involve designing new circuits, soldering, fabricating them,\nand more. I also like to use microcontrollers and microprocessors to implement various circuits and have won many\ncompetitions by making projects like Smart Home Lock, Creating Energy from LEDs, and much more. I also like to\ncode and program and I know many languages like C, C++, Python, MATLAB, DART, HTML, CSS and frameworks like\nAnaconda, Bootstrap, Flutter and more. I have also developed many Android as well iOS Applications using Flutter.\nI developed this whole website using Flutter in just 4 days. I also like to do photography and video editing,\nand have been doing it since a long time so I know Photoshop, Lightroom, Premiere Pro, After Effects and more.\nI have also worked as an video editor for a couple of YouTube channels excluding my own. In my channel, I\nregularly upload videos on how to make various electronics projects. I also upload photography and video editing\ntutorials on my Insatgram page. You can also checkout my LInkedIn page for contacting me.",
                   style: TextStyle(
                     color: Colors.white,
                     fontFamily: 'Montserrat',
@@ -657,11 +657,11 @@ class LandingPage extends StatelessWidget {
                   vertical: 20,
                 ),
                 child: Text(
-                  "I am experienced Electronic Engineer with a demonstrated history of working in the electrical \nand electronic manufacturing industry. Skilled in Python (Programming Language), DART, \nFlutter, Android App Development, Web Development, Lightroom, Video Editing, Digital \nManipulation, and Adobe Photoshop. I also have strong engineering professional with a BTech - \nBachelor of Technology focused in Electrical, Electronics and Communications Engineering \nfrom Netaji Subhas Institute of Technology.",
+                  "Hello, if we are meeting for the first time, I am Akshay Maurya, an engineering undergrad from Delhi, India.\nI am pursing engineering from Netaji Subhas University of Technology, Delhi in Electronics and Communications\nbranch. I love to create electronics projects which involve designing new circuits, soldering, fabricating them,\nand more. I also like to use microcontrollers and microprocessors to implement various circuits and have won many\ncompetitions by making projects like Smart Home Lock, Creating Energy from LEDs, and much more. I also like to\ncode and program and I know many languages like C, C++, Python, MATLAB, DART, HTML, CSS and frameworks like\nAnaconda, Bootstrap, Flutter and more. I have also developed many Android as well iOS Applications using Flutter.\nI developed this whole website using Flutter in just 4 days. I also like to do photography and video editing,\nand have been doing it since a long time so I know Photoshop, Lightroom, Premiere Pro, After Effects and more.\nI have also worked as an video editor for a couple of YouTube channels excluding my own. In my channel, I\nregularly upload videos on how to make various electronics projects. I also upload photography and video editing\ntutorials on my Insatgram page. You can also checkout my LInkedIn page for contacting me.",
                   style: TextStyle(
                     color: Colors.white,
                     fontFamily: 'Montserrat',
-                    fontSize: 16,
+                    fontSize: 13,
                   ),
                 ),
               ),
