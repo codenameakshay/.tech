@@ -39,23 +39,33 @@ class _MyHomePage3State extends State<MyHomePage3> {
               child: Container(
                 width: MediaQuery.of(context).size.width * 0.85,
                 child: DrawerHeader(
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(15),
-                    child: Tooltip(
-                      message: "About me",
-                      waitDuration: Duration(seconds: 1),
-                      child: MaterialButton(
-                        padding: EdgeInsets.all(0),
-                        onPressed: () {
-                          Navigator.of(context)
-                              .pushReplacement(MyHomePage1.route());
-                        },
-                        child: Image.asset(
-                          'images/dp.jpg',
+                  child: Stack(
+                    children: <Widget>[
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(15),
+                        child: Image.network(
+                          'https://raw.githubusercontent.com/codenameakshay/.tech/master/assets/images/dp.jpg',
                           width: 3000,
                         ),
                       ),
-                    ),
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(15),
+                        child: Tooltip(
+                          message: "About me",
+                          waitDuration: Duration(seconds: 1),
+                          child: MaterialButton(
+                            height: 215,
+                            padding: EdgeInsets.all(0),
+                            onPressed: () {
+                              Navigator.of(context)
+                                  .pushReplacement(MyHomePage1.route());
+                            },
+                            child: Text(
+                                '                                                                       '),
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                   decoration: BoxDecoration(
                     gradient: LinearGradient(
@@ -78,50 +88,62 @@ class _MyHomePage3State extends State<MyHomePage3> {
                   Divider(
                     height: 2.0,
                   ),
-                  ListTile(
-                    leading: Icon(FontAwesomeIcons.home),
-                    title: Text(
-                      'Home',
-                      style: TextStyle(
-                        fontFamily: 'Montserrat',
+                  Tooltip(
+                    message: "Navigate to Homepage",
+                    waitDuration: Duration(seconds: 1),
+                    child: ListTile(
+                      leading: Icon(FontAwesomeIcons.home),
+                      title: Text(
+                        'Home',
+                        style: TextStyle(
+                          fontFamily: 'Montserrat',
+                        ),
                       ),
+                      onTap: () {
+                        Navigator.of(context)
+                            .pushReplacement(MyHomePage.route());
+                      },
                     ),
-                    onTap: () {
-                      Navigator.of(context)
-                          .pushReplacement(MyHomePage.route());
-                    },
                   ),
                   Divider(
                     height: 2.0,
                   ),
-                  ListTile(
-                    leading: Icon(FontAwesomeIcons.github),
-                    title: Text(
-                      'GitHub Projects',
-                      style: TextStyle(
-                        fontFamily: 'Montserrat',
+                  Tooltip(
+                    message: "Navigate to GitHub Projects",
+                    waitDuration: Duration(seconds: 1),
+                    child: ListTile(
+                      leading: Icon(FontAwesomeIcons.github),
+                      title: Text(
+                        'GitHub Projects',
+                        style: TextStyle(
+                          fontFamily: 'Montserrat',
+                        ),
                       ),
+                      onTap: () {
+                        Navigator.of(context)
+                            .pushReplacement(MyHomePage2.route());
+                      },
                     ),
-                    onTap: () {
-                      Navigator.of(context)
-                          .pushReplacement(MyHomePage2.route());
-                    },
                   ),
                   Divider(
                     height: 2.0,
                   ),
-                  ListTile(
-                    leading: Icon(FontAwesomeIcons.bolt),
-                    title: Text(
-                      'Electronics Projects',
-                      style: TextStyle(
-                        fontFamily: 'Montserrat',
+                  Tooltip(
+                    message: "Navigate to Electronics Projects",
+                    waitDuration: Duration(seconds: 1),
+                    child: ListTile(
+                      leading: Icon(FontAwesomeIcons.bolt),
+                      title: Text(
+                        'Electronics Projects',
+                        style: TextStyle(
+                          fontFamily: 'Montserrat',
+                        ),
                       ),
+                      onTap: () {
+                        Navigator.of(context)
+                            .pushReplacement(MyHomePage3.route());
+                      },
                     ),
-                    onTap: () {
-                      Navigator.of(context)
-                          .pushReplacement(MyHomePage3.route());
-                    },
                   ),
                   Divider(
                     height: 2.0,
@@ -135,79 +157,100 @@ class _MyHomePage3State extends State<MyHomePage3> {
                       ),
                     ),
                     children: <Widget>[
-                      ListTile(
-                        leading: Icon(FontAwesomeIcons.book),
-                        title: Text(
-                          'Resume',
-                          style: TextStyle(
-                            fontFamily: 'Montserrat',
+                      Tooltip(
+                        message: "Navigate to my Resume",
+                        waitDuration: Duration(seconds: 1),
+                        child: ListTile(
+                          leading: Icon(FontAwesomeIcons.book),
+                          title: Text(
+                            'Resume',
+                            style: TextStyle(
+                              fontFamily: 'Montserrat',
+                            ),
                           ),
+                          onTap: () {
+                            launch('https://codenameakshay.tech/resume.pdf');
+                          },
                         ),
-                        onTap: () {
-                          launch('http://codenameakshay.tech/resume.pdf');
-                        },
                       ),
                       Divider(
                         height: 2.0,
                       ),
-                      ListTile(
-                        leading: Icon(FontAwesomeIcons.linkedin),
-                        title: Text(
-                          'LinkedIn',
-                          style: TextStyle(
-                            fontFamily: 'Montserrat',
+                      Tooltip(
+                        message: "Navigate to my LinkedIn Page",
+                        waitDuration: Duration(seconds: 1),
+                        child: ListTile(
+                          leading: Icon(FontAwesomeIcons.linkedin),
+                          title: Text(
+                            'LinkedIn',
+                            style: TextStyle(
+                              fontFamily: 'Montserrat',
+                            ),
                           ),
+                          onTap: () {
+                            launch(
+                                'https://www.linkedin.com/in/akshay-maurya-b56664170/');
+                          },
                         ),
-                        onTap: () {
-                          launch(
-                              'https://www.linkedin.com/in/akshay-maurya-b56664170/');
-                        },
                       ),
                       Divider(
                         height: 2.0,
                       ),
-                      ListTile(
-                        leading: Icon(FontAwesomeIcons.facebook),
-                        title: Text(
-                          'Facebook',
-                          style: TextStyle(
-                            fontFamily: 'Montserrat',
+                      Tooltip(
+                        message: "Navigate to my Facebook Page",
+                        waitDuration: Duration(seconds: 1),
+                        child: ListTile(
+                          leading: Icon(FontAwesomeIcons.facebook),
+                          title: Text(
+                            'Facebook',
+                            style: TextStyle(
+                              fontFamily: 'Montserrat',
+                            ),
                           ),
+                          onTap: () {
+                            launch(
+                                'https://www.facebook.com/akshay.maurya.180');
+                          },
                         ),
-                        onTap: () {
-                          launch('https://www.facebook.com/akshay.maurya.180');
-                        },
                       ),
                       Divider(
                         height: 2.0,
                       ),
-                      ListTile(
-                        leading: Icon(FontAwesomeIcons.instagram),
-                        title: Text(
-                          'Instagram',
-                          style: TextStyle(
-                            fontFamily: 'Montserrat',
+                      Tooltip(
+                        message: "Navigate to my Instagram Page",
+                        waitDuration: Duration(seconds: 1),
+                        child: ListTile(
+                          leading: Icon(FontAwesomeIcons.instagram),
+                          title: Text(
+                            'Instagram',
+                            style: TextStyle(
+                              fontFamily: 'Montserrat',
+                            ),
                           ),
+                          onTap: () {
+                            launch(
+                                'https://www.instagram.com/codename_photographer/');
+                          },
                         ),
-                        onTap: () {
-                          launch(
-                              'https://www.instagram.com/codename_photographer/');
-                        },
                       ),
                       Divider(
                         height: 2.0,
                       ),
-                      ListTile(
-                        leading: Icon(FontAwesomeIcons.githubAlt),
-                        title: Text(
-                          'GitHub',
-                          style: TextStyle(
-                            fontFamily: 'Montserrat',
+                      Tooltip(
+                        message: "Navigate to my GitHub Page",
+                        waitDuration: Duration(seconds: 1),
+                        child: ListTile(
+                          leading: Icon(FontAwesomeIcons.githubAlt),
+                          title: Text(
+                            'GitHub',
+                            style: TextStyle(
+                              fontFamily: 'Montserrat',
+                            ),
                           ),
+                          onTap: () {
+                            launch('https://github.com/codenameakshay/');
+                          },
                         ),
-                        onTap: () {
-                          launch('https://github.com/codenameakshay/');
-                        },
                       ),
                       Divider(
                         height: 2.0,
@@ -216,10 +259,14 @@ class _MyHomePage3State extends State<MyHomePage3> {
                   ),
                   Builder(
                     builder: (context) => ListTile(
-                      title: Text(
-                        'Toggle Dark mode',
-                        style: TextStyle(
-                          fontFamily: 'Montserrat',
+                      title: Tooltip(
+                        message: "Toggle dark mode on/off",
+                        waitDuration: Duration(seconds: 1),
+                        child: Text(
+                          'Toggle Dark mode',
+                          style: TextStyle(
+                            fontFamily: 'Montserrat',
+                          ),
                         ),
                       ),
                       leading: Icon(FontAwesomeIcons.lightbulb),
@@ -327,109 +374,136 @@ class DesktopNavBar extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
-                Text(
-                  'CodeNameAkshay',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                    fontSize: 30,
-                    fontFamily: 'Montserrat',
+                Tooltip(
+                  message: "Akshay Maurya",
+                  waitDuration: Duration(seconds: 1),
+                  child: Text(
+                    'CodeNameAkshay',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                      fontSize: 30,
+                      fontFamily: 'Montserrat',
+                    ),
                   ),
                 ),
               ],
             ),
             Row(
               children: <Widget>[
-                MaterialButton(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(20),
+                Tooltip(
+                  message: "Navigate to Homepage",
+                  waitDuration: Duration(seconds: 1),
+                  child: MaterialButton(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(20),
+                      ),
                     ),
-                  ),
-                  child: Text(
-                    'Home',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontFamily: 'Montserrat',
+                    child: Text(
+                      'Home',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontFamily: 'Montserrat',
+                      ),
                     ),
+                    onPressed: () {
+                      Navigator.of(context).pushReplacement(MyHomePage.route());
+                    },
                   ),
-                  onPressed: () {
-                    Navigator.of(context).pushReplacement(MyHomePage.route());
-                  },
                 ),
                 SizedBox(width: 10),
-                MaterialButton(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(20),
+                Tooltip(
+                  message: "Navigate to GitHub Projects",
+                  waitDuration: Duration(seconds: 1),
+                  child: MaterialButton(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(20),
+                      ),
                     ),
-                  ),
-                  child: Text(
-                    'GitHub',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontFamily: 'Montserrat',
+                    child: Text(
+                      'GitHub',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontFamily: 'Montserrat',
+                      ),
                     ),
+                    onPressed: () {
+                      Navigator.of(context)
+                          .pushReplacement(MyHomePage2.route());
+                    },
                   ),
-                  onPressed: () {
-                    Navigator.of(context).pushReplacement(MyHomePage2.route());
-                  },
                 ),
                 SizedBox(width: 10),
-                MaterialButton(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(20),
+                Tooltip(
+                  message: "Navigate to Electronics Projects",
+                  waitDuration: Duration(seconds: 1),
+                  child: MaterialButton(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(20),
+                      ),
                     ),
-                  ),
-                  child: Text(
-                    'Electronics',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontFamily: 'Montserrat',
+                    child: Text(
+                      'Electronics',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontFamily: 'Montserrat',
+                      ),
                     ),
+                    onPressed: () {
+                      Navigator.of(context)
+                          .pushReplacement(MyHomePage3.route());
+                    },
                   ),
-                  onPressed: () {
-                    Navigator.of(context).pushReplacement(MyHomePage3.route());
-                  },
                 ),
                 SizedBox(width: 10),
-                MaterialButton(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(20),
+                Tooltip(
+                  message: "Know me more",
+                  waitDuration: Duration(seconds: 1),
+                  child: MaterialButton(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(20),
+                      ),
                     ),
-                  ),
-                  child: Text(
-                    'About Me',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontFamily: 'Montserrat',
+                    child: Text(
+                      'About Me',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontFamily: 'Montserrat',
+                      ),
                     ),
+                    onPressed: () {
+                      Navigator.of(context)
+                          .pushReplacement(MyHomePage1.route());
+                    },
                   ),
-                  onPressed: () {
-                    Navigator.of(context).pushReplacement(MyHomePage1.route());
-                  },
                 ),
                 SizedBox(width: 20),
-                MaterialButton(
-                  onPressed: () {
-                    launch(
-                        'https://www.linkedin.com/in/akshay-maurya-b56664170/');
-                  },
-                  color: themeProvider.getDarkMode()
-                      ? Color.fromARGB(255, 115, 3, 192)
-                      : Colors.cyanAccent[400],
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(20),
+                Tooltip(
+                  message: "Contact me for work",
+                  waitDuration: Duration(seconds: 1),
+                  child: MaterialButton(
+                    onPressed: () {
+                      launch(
+                          'https://www.linkedin.com/in/akshay-maurya-b56664170/');
+                    },
+                    color: themeProvider.getDarkMode()
+                        ? Color.fromARGB(255, 115, 3, 192)
+                        : Colors.cyanAccent[400],
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(20),
+                      ),
                     ),
-                  ),
-                  child: Text(
-                    'Hire Me',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontFamily: 'Montserrat',
+                    child: Text(
+                      'Hire Me',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontFamily: 'Montserrat',
+                      ),
                     ),
                   ),
                 ),
@@ -450,7 +524,7 @@ class MobileNavBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 40),
+      padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
       child: Container(
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -463,13 +537,17 @@ class MobileNavBar extends StatelessWidget {
                 onPressed: () {
                   openDrawer();
                 }),
-            Text(
-              'CodeNameAkshay',
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-                fontSize: 30,
-                fontFamily: 'Montserrat',
+            Tooltip(
+              message: "Akshay Maurya",
+              waitDuration: Duration(seconds: 1),
+              child: Text(
+                'CodeNameAkshay',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                  fontSize: 30,
+                  fontFamily: 'Montserrat',
+                ),
               ),
             ),
           ],
@@ -503,8 +581,8 @@ class LandingPage extends StatelessWidget {
                     margin: EdgeInsets.only(top: 15, right: 15),
                     child: Stack(
                       children: <Widget>[
-                        Image.asset(
-                          'images/yt1.png',
+                        Image.network(
+                          'https://raw.githubusercontent.com/codenameakshay/.tech/master/assets/images/yt1.png',
                           width: 300,
                         ),
                         MaterialButton(
@@ -524,8 +602,8 @@ class LandingPage extends StatelessWidget {
                     margin: EdgeInsets.only(top: 15, right: 15, left: 15),
                     child: Stack(
                       children: <Widget>[
-                        Image.asset(
-                          'images/yt2.png',
+                        Image.network(
+                          'https://raw.githubusercontent.com/codenameakshay/.tech/master/assets/images/yt2.png',
                           width: 300,
                         ),
                         MaterialButton(
@@ -545,8 +623,8 @@ class LandingPage extends StatelessWidget {
                     margin: EdgeInsets.only(top: 15, right: 15, left: 15),
                     child: Stack(
                       children: <Widget>[
-                        Image.asset(
-                          'images/yt3.png',
+                        Image.network(
+                          'https://raw.githubusercontent.com/codenameakshay/.tech/master/assets/images/yt3.png',
                           width: 300,
                         ),
                         MaterialButton(
@@ -570,8 +648,8 @@ class LandingPage extends StatelessWidget {
                     margin: EdgeInsets.only(top: 15, right: 15, bottom: 15),
                     child: Stack(
                       children: <Widget>[
-                        Image.asset(
-                          'images/yt4.png',
+                        Image.network(
+                          'https://raw.githubusercontent.com/codenameakshay/.tech/master/assets/images/yt4.png',
                           width: 300,
                         ),
                         MaterialButton(
@@ -591,8 +669,8 @@ class LandingPage extends StatelessWidget {
                     margin: EdgeInsets.all(15),
                     child: Stack(
                       children: <Widget>[
-                        Image.asset(
-                          'images/yt5.png',
+                        Image.network(
+                          'https://raw.githubusercontent.com/codenameakshay/.tech/master/assets/images/yt5.png',
                           width: 300,
                         ),
                         MaterialButton(
@@ -612,8 +690,8 @@ class LandingPage extends StatelessWidget {
                     margin: EdgeInsets.all(15),
                     child: Stack(
                       children: <Widget>[
-                        Image.asset(
-                          'images/yt6.png',
+                        Image.network(
+                          'https://raw.githubusercontent.com/codenameakshay/.tech/master/assets/images/yt6.png',
                           width: 300,
                         ),
                         MaterialButton(
@@ -668,8 +746,8 @@ class LandingPage extends StatelessWidget {
         opacity: 0.4,
         child: Container(
           margin: EdgeInsets.only(top: 100),
-          child: Image.asset(
-            'images/hugo-productive-work.png',
+          child: Image.network(
+            'https://raw.githubusercontent.com/codenameakshay/.tech/master/assets/images/hugo-productive-work.png',
             width: sqrt(width) * 18,
           ),
         ),
@@ -688,16 +766,17 @@ class LandingPage extends StatelessWidget {
                   fontSize: 40,
                 ),
               ),
-              Row(mainAxisAlignment: MainAxisAlignment.center,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   Card(
                     color: Colors.white,
                     margin: EdgeInsets.only(top: 15, right: 15),
                     child: Stack(
                       children: <Widget>[
-                        Image.asset(
-                          'images/yt1.png',
-                          width: 180,
+                        Image.network(
+                          'https://raw.githubusercontent.com/codenameakshay/.tech/master/assets/images/yt1.png',
+                          width: 160,
                         ),
                         MaterialButton(
                             hoverColor: Colors.black26,
@@ -705,9 +784,8 @@ class LandingPage extends StatelessWidget {
                               launch(
                                   'https://www.youtube.com/watch?v=A8pD1dj2Qsg');
                             },
-                            height: 140,
-                            child: Text(
-                                "                                      "))
+                            height: 125,
+                            child: Text("                                 "))
                       ],
                     ),
                   ),
@@ -716,9 +794,9 @@ class LandingPage extends StatelessWidget {
                     margin: EdgeInsets.only(top: 15, right: 15),
                     child: Stack(
                       children: <Widget>[
-                        Image.asset(
-                          'images/yt2.png',
-                          width: 180,
+                        Image.network(
+                          'https://raw.githubusercontent.com/codenameakshay/.tech/master/assets/images/yt2.png',
+                          width: 160,
                         ),
                         MaterialButton(
                             hoverColor: Colors.black26,
@@ -726,24 +804,24 @@ class LandingPage extends StatelessWidget {
                               launch(
                                   'https://www.youtube.com/watch?v=_Wd3oHnJhHo');
                             },
-                            height: 140,
-                            child: Text(
-                                "                                      "))
-                       ],
+                            height: 125,
+                            child: Text("                                 "))
+                      ],
                     ),
                   ),
                 ],
               ),
-              Row(mainAxisAlignment: MainAxisAlignment.center,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   Card(
                     color: Colors.white,
                     margin: EdgeInsets.only(top: 15, right: 15),
                     child: Stack(
                       children: <Widget>[
-                        Image.asset(
-                          'images/yt3.png',
-                          width: 180,
+                        Image.network(
+                          'https://raw.githubusercontent.com/codenameakshay/.tech/master/assets/images/yt3.png',
+                          width: 160,
                         ),
                         MaterialButton(
                             hoverColor: Colors.black26,
@@ -751,9 +829,8 @@ class LandingPage extends StatelessWidget {
                               launch(
                                   'https://www.youtube.com/watch?v=35NZ8DxCS-g');
                             },
-                            height: 140,
-                            child: Text(
-                                "                                      "))
+                            height: 125,
+                            child: Text("                                 "))
                       ],
                     ),
                   ),
@@ -762,9 +839,9 @@ class LandingPage extends StatelessWidget {
                     margin: EdgeInsets.only(top: 15, right: 15),
                     child: Stack(
                       children: <Widget>[
-                        Image.asset(
-                          'images/yt4.png',
-                          width: 180,
+                        Image.network(
+                          'https://raw.githubusercontent.com/codenameakshay/.tech/master/assets/images/yt4.png',
+                          width: 160,
                         ),
                         MaterialButton(
                             hoverColor: Colors.black26,
@@ -772,24 +849,24 @@ class LandingPage extends StatelessWidget {
                               launch(
                                   'https://www.youtube.com/watch?v=iENXxbHCuU0');
                             },
-                            height: 140,
-                            child: Text(
-                                "                                      "))
-                       ],
+                            height: 125,
+                            child: Text("                                 "))
+                      ],
                     ),
                   ),
                 ],
               ),
-              Row(mainAxisAlignment: MainAxisAlignment.center,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   Card(
                     color: Colors.white,
                     margin: EdgeInsets.only(top: 15, right: 15, bottom: 15),
                     child: Stack(
                       children: <Widget>[
-                        Image.asset(
-                          'images/yt5.png',
-                          width: 180,
+                        Image.network(
+                          'https://raw.githubusercontent.com/codenameakshay/.tech/master/assets/images/yt5.png',
+                          width: 160,
                         ),
                         MaterialButton(
                             hoverColor: Colors.black26,
@@ -797,9 +874,8 @@ class LandingPage extends StatelessWidget {
                               launch(
                                   'https://www.youtube.com/watch?v=w1odfEejg-s');
                             },
-                            height: 140,
-                            child: Text(
-                                "                                      "))
+                            height: 125,
+                            child: Text("                                 "))
                       ],
                     ),
                   ),
@@ -808,9 +884,9 @@ class LandingPage extends StatelessWidget {
                     margin: EdgeInsets.only(top: 15, right: 15, bottom: 15),
                     child: Stack(
                       children: <Widget>[
-                        Image.asset(
-                          'images/yt6.png',
-                          width: 180,
+                        Image.network(
+                          'https://raw.githubusercontent.com/codenameakshay/.tech/master/assets/images/yt6.png',
+                          width: 160,
                         ),
                         MaterialButton(
                             hoverColor: Colors.black26,
@@ -818,10 +894,9 @@ class LandingPage extends StatelessWidget {
                               launch(
                                   'https://www.youtube.com/watch?v=Yt7kgCYVjxU');
                             },
-                           height: 140,
-                            child: Text(
-                                "                                      "))
-                       ],
+                            height: 125,
+                            child: Text("                                 "))
+                      ],
                     ),
                   ),
                 ],
