@@ -1,16 +1,20 @@
-# webpagedemo
+# CodeNameAkshay.Tech
 
-A new Flutter project.
+This is a website made entirely on Flutter. It features dynamic scaling, dark mode, ultra-fast render time (A performance grade by PingHost) and 60-fps custom animations.
 
-## Getting Started
+## Demo
 
-This project is a starting point for a Flutter application.
+You can check out [www.codenameakshay.tech](https://codenameakshay.tech) for the website.
 
-A few resources to get you started if this is your first Flutter project:
+## Usage
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+You can simply clone the code, and the open `main.dart` for code.
+You can also check out the website by opening it from `build/web/` folder.
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Things to do
+
+ - [ ] Example pictures
+ - [ ] Splash Screen
+ - [ ] WebView
+ - [ ] Native Blog
+ - [ ] Custom ScrollView
