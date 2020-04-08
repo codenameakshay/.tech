@@ -6,6 +6,10 @@ This is a website made entirely on Flutter. It features dynamic scaling, dark mo
 
 You can check out [www.codenameakshay.tech](https://codenameakshay.tech) for the website.
 
+![](/examples/Portrait.gif)
+
+![](/examples/Landscape.gif)
+
 ## Usage
 
 You can simply clone the code, and the open `main.dart` for code.
@@ -13,7 +17,7 @@ You can also check out the website by opening it from `build/web/` folder.
 
 ## Things to do
 
- - [ ] Example pictures
+ - [x] Example pictures
  - [ ] Splash Screen
  - [ ] WebView
  - [ ] Native Blog

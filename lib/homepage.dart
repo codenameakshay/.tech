@@ -106,6 +106,25 @@ class _MyHomePageState extends State<MyHomePage> {
                     height: 2.0,
                   ),
                   Tooltip(
+                    message: "Navigate to my Blog",
+                    waitDuration: Duration(seconds: 1),
+                    child: ListTile(
+                      leading: Icon(FontAwesomeIcons.blog),
+                      title: Text(
+                        'Blog',
+                        style: TextStyle(
+                          fontFamily: 'Montserrat',
+                        ),
+                      ),
+                      onTap: () {
+                        launch("https://blog-bd6w.onrender.com/");
+                      },
+                    ),
+                  ),
+                  Divider(
+                    height: 2.0,
+                  ),
+                  Tooltip(
                     message: "Navigate to GitHub Projects",
                     waitDuration: Duration(seconds: 1),
                     child: ListTile(
@@ -480,12 +499,12 @@ class DesktopNavBar extends StatelessWidget {
                 ),
                 SizedBox(width: 20),
                 Tooltip(
-                  message: "Contact me for work",
+                  message: "Checkout my blog",
                   waitDuration: Duration(seconds: 1),
                   child: MaterialButton(
                     onPressed: () {
                       launch(
-                          'https://www.linkedin.com/in/akshay-maurya-b56664170/');
+                          'https://blog-bd6w.onrender.com/');
                     },
                     color: themeProvider.getDarkMode()
                         ? Color.fromARGB(255, 115, 3, 192)
@@ -496,7 +515,7 @@ class DesktopNavBar extends StatelessWidget {
                       ),
                     ),
                     child: Text(
-                      'Hire Me',
+                      'Blog',
                       style: TextStyle(
                         color: Colors.white,
                         fontFamily: 'Montserrat',
