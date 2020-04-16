@@ -38,42 +38,50 @@ class _MyHomePageState extends State<MyHomePage> {
               flex: 1,
               child: Container(
                 width: MediaQuery.of(context).size.width * 0.85,
-                child: DrawerHeader(
-                  child: Stack(
-                    children: <Widget>[
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(15),
-                        child: Image.network(
-                          'https://raw.githubusercontent.com/codenameakshay/.tech/master/assets/images/dp.jpg',
-                          width: 3000,
+                child: Stack(
+                  fit: StackFit.expand,
+                  children: <Widget>[
+                    UserAccountsDrawerHeader(
+                      accountName: Text(
+                        'Akshay Maurya',
+                        style:
+                            TextStyle(fontFamily: "Montserrat", fontSize: 24),
+                      ),
+                      accountEmail: Text(
+                        "akshaymaurya3006@gmail.com",
+                        style:
+                            TextStyle(fontFamily: "Montserrat", fontSize: 12),
+                      ),
+                      onDetailsPressed: () {
+                        Navigator.of(context)
+                            .pushReplacement(MyHomePage1.route());
+                      },
+                      decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
+                          colors: [
+                            Color.fromARGB(255, 60, 140, 231),
+                            Color.fromARGB(255, 0, 234, 255),
+                          ],
                         ),
                       ),
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(15),
-                        child: Tooltip(
-                          message: "About me",
-                          waitDuration: Duration(seconds: 1),
-                          child: MaterialButton(height: 215,
-                            padding: EdgeInsets.all(0),
-                            onPressed: () {
-                              Navigator.of(context)
-                                  .pushReplacement(MyHomePage1.route());
-                            },child: Text('                                                                       '),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(5, 20, 80, 90),
+                      child: CircleAvatar(
+                        // width: 100,
+                        // height: 100,
+                        child: ClipOval(
+                          clipBehavior: Clip.hardEdge,
+                          child: Image.network(
+                            'https://raw.githubusercontent.com/codenameakshay/blog/master/static/img/ak.jpg',
+                            fit: BoxFit.cover,
                           ),
                         ),
                       ),
-                    ],
-                  ),
-                  decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                      begin: Alignment.topLeft,
-                      end: Alignment.bottomRight,
-                      colors: [
-                        Color.fromARGB(255, 60, 140, 231),
-                        Color.fromARGB(255, 0, 234, 255),
-                      ],
                     ),
-                  ),
+                  ],
                 ),
               ),
             ),
@@ -97,7 +105,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         ),
                       ),
                       onTap: () {
-                         Navigator.of(context)
+                        Navigator.of(context)
                             .pushReplacement(MyHomePage.route());
                       },
                     ),
@@ -503,8 +511,7 @@ class DesktopNavBar extends StatelessWidget {
                   waitDuration: Duration(seconds: 1),
                   child: MaterialButton(
                     onPressed: () {
-                      launch(
-                          'https://blog-bd6w.onrender.com/');
+                      launch('https://blog-bd6w.onrender.com/');
                     },
                     color: themeProvider.getDarkMode()
                         ? Color.fromARGB(255, 115, 3, 192)

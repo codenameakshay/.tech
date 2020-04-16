@@ -23,7 +23,7 @@ class SimpleRoute extends PageRoute {
   bool get maintainState => true;
 
   @override
-  Duration get transitionDuration => Duration(milliseconds: 0);
+  Duration get transitionDuration => Duration(milliseconds: 50);
 
   @override
   Widget buildPage(BuildContext context, Animation<double> animation,
