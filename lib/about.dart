@@ -61,10 +61,17 @@ class _MyHomePage1State extends State<MyHomePage1> {
                         gradient: LinearGradient(
                           begin: Alignment.topLeft,
                           end: Alignment.bottomRight,
-                          colors: [
-                            Color.fromARGB(255, 60, 140, 231),
-                            Color.fromARGB(255, 0, 234, 255),
-                          ],
+                          colors: themeProvider.getDarkMode()
+                              ? [
+                                  Color.fromARGB(255, 3, 0, 30),
+                                  Color.fromARGB(255, 115, 3, 192),
+                                  Color.fromARGB(255, 236, 56, 188),
+                                  Color.fromARGB(255, 253, 239, 249),
+                                ]
+                              : [
+                                  Color.fromARGB(255, 60, 140, 231),
+                                  Color.fromARGB(255, 0, 234, 255),
+                                ],
                         ),
                       ),
                     ),
@@ -512,8 +519,7 @@ class DesktopNavBar extends StatelessWidget {
                   waitDuration: Duration(seconds: 1),
                   child: MaterialButton(
                     onPressed: () {
-                      launch(
-                          'https://blog-bd6w.onrender.com/');
+                      launch('https://blog-bd6w.onrender.com/');
                     },
                     color: themeProvider.getDarkMode()
                         ? Color.fromARGB(255, 115, 3, 192)
@@ -681,7 +687,7 @@ class LandingPage extends StatelessWidget {
                   vertical: 20,
                 ),
                 child: Text(
-                  "Hello, if we are meeting for the first time, I am Akshay Maurya, an engineering undergrad from Delhi, India.\nI am pursing engineering from Netaji Subhas University of Technology, Delhi in Electronics and Communications\nbranch. I love to create electronics projects which involve designing new circuits, soldering, fabricating them,\nand more. I also like to use microcontrollers and microprocessors to implement various circuits and have won many\ncompetitions by making projects like Smart Home Lock, Creating Energy from LEDs, and much more. I also like to\ncode and program and I know many languages like C, C++, Python, MATLAB, DART, HTML, CSS and frameworks like\nAnaconda, Bootstrap, Flutter and more. I have also developed many Android as well iOS Applications using Flutter.\nI developed this whole website using Flutter in just 4 days. I also like to do photography and video editing,\nand have been doing it since a long time so I know Photoshop, Lightroom, Premiere Pro, After Effects and more.\nI have also worked as an video editor for a couple of YouTube channels excluding my own. In my channel, I\nregularly upload videos on how to make various electronics projects. I also upload photography and video editing\ntutorials on my Insatgram page. You can also checkout my LInkedIn page for contacting me.",
+                  "Hello, if we are meeting for the first time, I am Akshay Maurya, an engineering undergrad from Delhi, India.\nI am pursing engineering from Netaji Subhas University of Technology, Delhi in Electronics and Communications\nbranch. I love to create electronics projects which involve designing new circuits, soldering, fabricating them,\nand more. I also like to use microcontrollers and microprocessors to implement various circuits and have won many\ncompetitions by making projects like Smart Home Lock, Creating Energy from LEDs, and much more. I also like to\ncode and program and I know many languages like C, C++, Python, MATLAB, DART, HTML, CSS and frameworks like\nAnaconda, Bootstrap, Flutter and more. I have also developed many Android as well iOS Applications using Flutter.\nI developed this whole website using Flutter in just 4 days. I also like to do photography and video editing,\nand have been doing it since a long time so I know Photoshop, Lightroom, Premiere Pro, After Effects and more.\nI have also worked as a video editor for a couple of YouTube channels excluding my own. In my channel, I\nregularly upload videos on how to make various electronics projects. I also upload photography and video editing\ntutorials on my Insatgram page. You can also checkout my LinkedIn page for contacting me.",
                   style: TextStyle(
                     color: Colors.white,
                     fontFamily: 'Montserrat',

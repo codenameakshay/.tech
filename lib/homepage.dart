@@ -60,10 +60,17 @@ class _MyHomePageState extends State<MyHomePage> {
                         gradient: LinearGradient(
                           begin: Alignment.topLeft,
                           end: Alignment.bottomRight,
-                          colors: [
-                            Color.fromARGB(255, 60, 140, 231),
-                            Color.fromARGB(255, 0, 234, 255),
-                          ],
+                          colors: themeProvider.getDarkMode()
+                              ? [
+                                  Color.fromARGB(255, 3, 0, 30),
+                                  Color.fromARGB(255, 115, 3, 192),
+                                  Color.fromARGB(255, 236, 56, 188),
+                                  Color.fromARGB(255, 253, 239, 249),
+                                ]
+                              : [
+                                  Color.fromARGB(255, 60, 140, 231),
+                                  Color.fromARGB(255, 0, 234, 255),
+                                ],
                         ),
                       ),
                     ),
