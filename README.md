@@ -20,12 +20,13 @@ You can also check out the website by opening it from `build/web/` folder.
  - [x] Example pictures
  - [ ] Splash Screen
  - [ ] WebView
+ - [x] About page Marquee
  - [x] Native Blog
  - [ ] Custom ScrollView
- - [ ] Scaling Issues
+ - [x] Scaling Issues
  - [ ] Electronics Projects should be a ListView
  - [x] Darkmode changes DrawerHeaderColor
  - [x] Drawerprofile should be a circle
  - [ ] Separate video with Title
- - [ ] Correct Typo (an video editor) in About page
- - [ ] Vary font, its basic
+ - [x] Correct Typo (an video editor) in About page
+ - [x] Vary font, its basic
